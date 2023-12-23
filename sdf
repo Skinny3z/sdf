@@ -1,34 +1,31 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/yDragonUw/uiLIB/main/UI-LIB'))()
 
-local Window = OrionLib:MakeWindow({Name = W-Skinny Blade Ball", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = library:CreateWindow("W-Skinny", "Blade Ball", 10044538000)
 
-local  CombatTab = Window:MakeTab({
-    Name = "Combat",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
+local Tab = Window:CreateTab("Scripts")
 
-local Section = CombatTab:AddSection({
-    Name = "Funções"
-})
+local FPage = Tab:CreateFrame("Funções")
+local CRPage = Tab:CreateFrame("Credits")
 
-CombatTab:AddButton({
-    Name = " Auto Parry",
-    Callback = function()
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-      end
-})
+FPage:CreateButton("Auto Parry", "Auto Parry Ball", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+end)
 
-CombatTab:AddButton({
-    Name = "Auto Click",
-    Callback = function()
-           loadstring(game:HttpGet('https://pastebin.com/raw/KB4xQe4j'))()
-      end
-})
+FPage:CreateButton("Auto Click", "Auto Click", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/KB4xQe4j'))()
+end)
 
-CombatTab:AddButton({
-    Name = "FPS Booster",
-    Callback = function()
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
-      end
-})
+FPage:CreateButton("FPS Booster", "Boost you FPS", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+end)
+
+FPage:CreateButton("Infinite Yield Admin", "Use Comandos de Admnistrador para trolar", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+CRPage:CreateButton("Copiar canal do Youtube", "Copia canal do criador do script", function()
+setclipboard("https://www.youtube.com/@nianawa7615")
+end)
+CRPage:CreateLabel("Scripts & Functions:Skinny")
+CRPage:CreateLabel("UI Library:Vanis UI lib [Modificado por Skinny]")
+CRPage:CreateLabel("Ultima Atualização: 23.12.23")
